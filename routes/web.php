@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/login/{erro?}', [\App\Http\Controllers\LoginController::class, 'index'])->name('login');
-Route::post('/login', [\App\Http\Controllers\LoginController::class, 'autenticacao'])->name('login');
+Route::get('/login/{locale?}/{erro?}', [\App\Http\Controllers\LoginController::class, 'index'])->name('login');
+Route::post('/login/{locale?}', [\App\Http\Controllers\LoginController::class, 'autenticacao'])->name('login');
 
 Route::get('/cadastro', [\App\Http\Controllers\CadastroController::class, 'index'])->name('cadastro');
 Route::resource('cadastro', '\App\Http\Controllers\CadastroController');

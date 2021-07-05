@@ -13,11 +13,11 @@
 
     <div class="topnav">
         <a class="active" href="#home"> HOME </a>
-        <a href="#monitorias"> MONITORIAS </a>
-        <a href="#calendario"> CALENDÁRIO </a>
-        <a href="#quem somos"> QUEM SOMOS? </a>
-        <button class="button_on"> ENTRAR </button>
-        <button class="button_new"> REGISTRE-SE </button>
+        <a href="#monitorias"> @lang('lang.Monitorias') </a>
+        <a href="#calendario"> @lang('lang.Calendario') </a>
+        <a href="#quem somos"> @lang('lang.QuemSomos') </a>
+        <button class="button_on"> @lang('lang.Entrar') </button>
+        <button class="button_new"> @lang('lang.Registre-se') </button>
     </div>
     
     <section>
@@ -25,10 +25,10 @@
         <div id="login">
             <form method="POST" action="{{ route('cadastro.store') }}">
                 @csrf
-                <h1> C A D A S T R O </h1>
+                <h1> @lang('lang.Cadastro') </h1>
 
                 <p id="camp">
-                    <label for="nome"> Nome: </label>
+                    <label for="nome"> @lang('lang.Nome'): </label>
                     <input id="email" name="nome" value="{{ old('nome') }}" type="text">
                     {{ $errors->has('nome') ? $errors->first('nome') : '' }}
                 </p>
@@ -58,24 +58,24 @@
                 </p>
 
                 <p id="camp">
-                    <label for="senha"> Senha: </label>
+                    <label for="senha"> @lang('lang.Senha'): </label>
                     <input id="senha" name="senha" value="{{ old('senha') }}" type="password" />
                     {{ $errors->has('senha') ? $errors->first('senha') : '' }}
                 </p>
 
                 <p id="camp">
-                    <label for="senha"> Confirmação de senha: </label>
+                    <label for="senha"> @lang('lang.ConfirmacaoDeSenha'): </label>
                     <input id="senha" name="confirmacao_senha" value="{{ old('confirmacao_senha') }}" type="password" />
                     {{ $errors->has('confirmacao_senha') ? $errors->first('confirmacao_senha') : '' }}
                 </p>
 
                 <p id="check">
                     <input type="checkbox" name="manterlogado" id="manterlogado" value="" />
-                    <label for="manterlogado">Manter-me logado</label>
+                    <label for="manterlogado">@lang('lang.Manter-meLogado')</label>
                 </p>
 
                 <p>
-                    <button class="button_login" type="submit"> Registrar </button>
+                    <button class="button_login" type="submit"> @lang('lang.Registre-se') </button>
                 </p>
 
             </form>
@@ -85,21 +85,13 @@
         <h2>
             Monitorando
         </h2>
-        <p> O sistema tem como objetivo ajudar e informar os alunos e monitores a terem um maior controle e capacidade
-            de
-            organização sobre as monitorias ministradas dentro do Instituto, podendo também localizar com mais
-            facilidade
-            onde acontecerá a monitoria e ao final de tudo poder avaliar o monitor segundo o quanto foi proveitoso a
-            presença no evento.</p>
+        <p> @lang('lang.Paragrafo1')</p>
     </div>
     <div class="info">
-        <h2> Praticidade </h2>
-        <p> Não fique mais se preocupando em anotar horário de atendimento do seu professor ou de seu monitor favorito,
-            pois de onde você estiver o Monitorando disponibilizará todas as monitorias e plantões de dúvidas de todo o
-            Instituto Federal de São Paulo, de forma organizada, prática e eficiente.</p>
-        <h3> TEM VERGONHA DE TIRAR DÚVIDAS? </h3>
-        <p>Isso não será mais um problema, você poderá tirar suas dúvidas por meio de um fórum de dúvidas e mensagens
-            dentro da plataforma de onde estiver!</p>
+        <h2> @lang('lang.Praticidade') </h2>
+        <p> @lang('lang.Paragrafo2')</p>
+        <h3> @lang('lang.Vergonha') </h3>
+        <p>>@lang('lang.Paragrafo3')</p>
     </div>
 
     <!-- <footer class="footer">

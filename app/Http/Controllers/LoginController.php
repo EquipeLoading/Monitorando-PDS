@@ -2,24 +2,34 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Models\Usuario;
 
 class LoginController extends Controller
 {
 
-    public function index(Request $request)
+    public function index(Request $request, $locale = null)
     {
         $erro = '';
 
-        if($request->get('erro') == 1) {
-            $erro = 'Usuário e/ou senha não existe';
+        if($locale == null|| $locale == 'pt-BR') {
+            app()->setLocale('pt-BR');
+            if($request->get('erro') == 1) {
+                $erro = 'Usuário e/ou senha não existe';
+            }
+            return view('login', ['erro' => $erro]);
+        } else {
+            app()->setLocale($locale);
+            if($request->get('erro') == 1) {
+                $erro = 'User and/or password does not exist';
+            }
+            return view('login', ['erro' => $erro]);
         }
-        
-        return view('login', ['erro' => $erro]);
+
     }
 
-    public function autenticacao(Request $request) {
+    public function autenticacao(Request $request, $locale = null) {
 
         $regras = [
             'email' =>'required|email',
@@ -49,9 +59,9 @@ class LoginController extends Controller
             $_SESSION['nome'] = $login->nome;
             $_SESSION['email'] = $login->email;
 
-            return redirect()->route('login');
+            return redirect()->route('login', ['locale' => $locale]);
         } else {
-            return redirect()->route('login', ['erro' => 1]);
+            return redirect()->route('login', ['locale' => $locale, 'erro' => 1]);
         }
 
     }
