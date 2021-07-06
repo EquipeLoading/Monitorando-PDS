@@ -28,14 +28,16 @@
                 <h1> L O G I N </h1>
 
                 <p id="camp">
-                    <label for="email"> E-mail: </label>
-                    <input id="email" name="email" value="{{ old('email') }}" type="text" placeholder="nome@aluno.ifsp.edu.br" />
+                    <label class="labelFont" for="email"> E-mail </label>
+                    <br>
+                    <input id="email" name="email" class="inputBorder" value="{{ old('email') }}" type="text" placeholder="nome@aluno.ifsp.edu.br" />
                     {{ $errors->has('email') ? $errors->first('email') : '' }}
                 </p>
 
                 <p id="camp">
-                    <label for="senha"> @lang('lang.Senha'): </label>
-                    <input id="senha" name="senha" type="password" />
+                    <label class="labelFont" for="senha"> @lang('lang.Senha')</label>
+                    <br>
+                    <input id="senha" name="senha" type="password" class="inputBorder"/>
                     {{ $errors->has('senha') ? $errors->first('senha') : '' }}
                 </p>
 
@@ -49,14 +51,11 @@
                 </p>
 
                 <p>
+                    <button class="button_registro"><a href="{{ route('cadastro.create') }}"> @lang('lang.Registre-se') </a></button>
                     <button class="button_login" type="submit"> @lang('lang.Entrar') </button>
                 </p>
 
             </form>
-
-            <p>
-                <button class="button_registro"><a href="{{ route('cadastro.create') }}"> @lang('lang.Registre-se') </a></button>
-            </p>
 
             {{ isset($erro) && $erro != '' ? $erro : '' }}
             

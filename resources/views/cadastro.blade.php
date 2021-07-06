@@ -21,51 +21,51 @@
     </div>
     
     <section>
-        <img src="{{ asset('/img/banner.jpg') }}" alt="banner_monitorando" class="banner" width=1503>
+        <img src="{{ asset('/img/banner.jpg') }}" alt="banner_monitorando" id="banner">
         <div id="login">
             <form method="POST" action="{{ route('cadastro.store') }}">
                 @csrf
                 <h1> @lang('lang.Cadastro') </h1>
 
                 <p id="camp">
-                    <label for="nome"> @lang('lang.Nome'): </label>
-                    <input id="email" name="nome" value="{{ old('nome') }}" type="text">
+                    <label class="labelFont" for="nome"> @lang('lang.Nome') </label>
+                    <input class="inputBorder" id="email" name="nome" value="{{ old('nome') }}" type="text">
                     {{ $errors->has('nome') ? $errors->first('nome') : '' }}
                 </p>
 
                 <p id="camp">
-                    <label for="email"> E-mail: </label>
-                    <input id="email" name="email" value="{{ old('email') }}" type="text" placeholder="nome@aluno.ifsp.edu.br" />
+                    <label class="labelFont" for="email"> E-mail </label>
+                    <input class="inputBorder" id="email" name="email" value="{{ old('email') }}" type="text" placeholder="nome@aluno.ifsp.edu.br" />
                     {{ $errors->has('email') ? $errors->first('email') : '' }}
                 </p>
 
                 <p id="camp">
-                    <label for="prontuario"> Prontuário: </label>
-                    <input id="email" name="prontuario" value="{{ old('prontuario') }}" type="text" placeholder="SPXXXXXXX" />
+                    <label class="labelFont" for="prontuario"> Prontuário </label>
+                    <input class="inputBorder" id="email" name="prontuario" value="{{ old('prontuario') }}" type="text" placeholder="SPXXXXXXX" />
                     {{ $errors->has('prontuario') ? $errors->first('prontuario') : '' }}
                 </p>
 
                 <p id="camp">
-                    <label for="turma"> Turma: </label>
-                    <input id="email" name="turma" value="{{ old('turma') }}" type="text" />
+                    <label class="labelFont" for="turma"> Turma </label>
+                    <input class="inputBorder" id="email" name="turma" value="{{ old('turma') }}" type="text" />
                     {{ $errors->has('turma') ? $errors->first('turma') : '' }}
                 </p>
 
                 <p id="camp">
-                    <label for="curso"> Curso: </label>
-                    <input id="email" name="curso" value="{{ old('curso') }}" type="text" />
+                    <label class="labelFont" for="curso"> Curso </label>
+                    <input class="inputBorder" id="email" name="curso" value="{{ old('curso') }}" type="text" />
                     {{ $errors->has('curso') ? $errors->first('curso') : '' }}
                 </p>
 
                 <p id="camp">
-                    <label for="senha"> @lang('lang.Senha'): </label>
-                    <input id="senha" name="senha" value="{{ old('senha') }}" type="password" />
+                    <label class="labelFont" for="senha"> @lang('lang.Senha') </label>
+                    <input class="inputBorder" id="senha" name="senha" value="{{ old('senha') }}" type="password" />
                     {{ $errors->has('senha') ? $errors->first('senha') : '' }}
                 </p>
 
                 <p id="camp">
-                    <label for="senha"> @lang('lang.ConfirmacaoDeSenha'): </label>
-                    <input id="senha" name="confirmacao_senha" value="{{ old('confirmacao_senha') }}" type="password" />
+                    <label class="labelFont" for="senha"> @lang('lang.ConfirmacaoDeSenha') </label>
+                    <input class="inputBorder" id="senha" name="confirmacao_senha" value="{{ old('confirmacao_senha') }}" type="password" />
                     {{ $errors->has('confirmacao_senha') ? $errors->first('confirmacao_senha') : '' }}
                 </p>
 
