@@ -6,6 +6,7 @@
     <title> Monitorando </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/style.css') }}">
+    
     <!-- mediaquery -->
 </head>
 
@@ -21,26 +22,23 @@
     </div>
     
     <section>
-        <img src="{{ asset('/img/banner.jpg') }}" alt="banner_monitorando" class="banner" width=1503>
+        <img src="{{ asset('/img/banner.jpg') }}" alt="banner_monitorando" class="banner">
         <div id="login">
             <form method="POST" action="{{ route('login', ['locale' => app()->getLocale()]) }}">
                 @csrf
                 <h1> L O G I N </h1>
-
                 <p id="camp">
-                    <label for="email"> E-mail: </label>
-                    <input id="email" name="email" value="{{ old('email') }}" type="text" placeholder="nome@aluno.ifsp.edu.br" />
+                    <label for="email"> E-mail </label>
+                    <br>
+                    <input id="email" class="borderInput" name="email" value="{{ old('email') }}" type="text" placeholder="nome@aluno.ifsp.edu.br" />
                     {{ $errors->has('email') ? $errors->first('email') : '' }}
                 </p>
 
                 <p id="camp">
-                    <label for="senha"> @lang('lang.Senha'): </label>
-                    <input id="senha" name="senha" type="password" />
+                    <label for="senha"> @lang('lang.Senha') </label>
+                    <br>
+                    <input id="senha" class="borderInput" name="senha" type="password" />
                     {{ $errors->has('senha') ? $errors->first('senha') : '' }}
-                </p>
-
-                <p class="link">
-                    <a href="#paracadastro">@lang('lang.RecuperarSenha')</a>
                 </p>
 
                 <p id="check">
@@ -48,15 +46,12 @@
                     <label for="manterlogado">@lang('lang.Manter-meLogado')</label>
                 </p>
 
-                <p>
+                <p> 
+                    <button class="button_registro"><a href="{{ route('cadastro.create') }}"> @lang('lang.Registre-se') </a></button>
                     <button class="button_login" type="submit"> @lang('lang.Entrar') </button>
                 </p>
 
             </form>
-
-            <p>
-                <button class="button_registro"><a href="{{ route('cadastro.create') }}"> @lang('lang.Registre-se') </a></button>
-            </p>
 
             {{ isset($erro) && $erro != '' ? $erro : '' }}
             

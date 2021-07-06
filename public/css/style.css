@@ -1,21 +1,27 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
   }
   
 /* /---------- NAV BAR ----------/ */
   
-.topnav {
+.topnav {   
+    display: flex;
+    align-items: center;
+    width: 100vw;
     overflow: hidden;
     background-color: #5499C3;
 }
   
-.topnav a {
+.topnav a{
     float: left;
     color: #ffffff;
     text-align: center;
-    padding: 30px 30px;
     text-decoration: none;
-    font-size: 17px;
+    padding: 3vh 3vw;
+    font-size: 1em;
 }
   
 .topnav a:hover {
@@ -34,15 +40,12 @@ body {
     background-color: #ffffff;
     border: none;
     color: #5499C3;
-    padding: 15px 32px;
-    text-align: center;
-    font-size: 17px;
-    margin-top: 12px;
-    position: absolute;
-    width: 170px;
-    height: 46px;
-    left: 1150px;
-    top: 18px;
+    font-size: 1em;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 10.6vw;
+    height: 7vh;
+    margin-left: auto;
     cursor: pointer;
 }
   
@@ -52,41 +55,75 @@ body {
     background-color: #193D6F;
     border: none;
     color: #ffffff;
-    padding: 15px 32px;
-    text-align: center;
-    font-size: 17px;
-    margin-top: 12px;
-    position: absolute;
-    width: 208px;
-    height: 46px;
-    left: 1320px;
-    top: 18px;
+    font-size: 1em;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 10.6vw;
+    height: 7vh;
+    margin-right: 5vw;
     cursor: pointer;
 }
   
 /* /---------- caixa de login ----------/ */
   
-#login {
-    background-color: #BFC4CA;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    color: #193D6F;
-    font-size: 20px;
-    position: absolute;
-    width: 400px;
-    height: 350px;
-    left: 1000px;
-    top: 400px;
-    text-align: center;
-    border-radius: 0 0 5px 5px;
-    border-radius: 10px;
+.banner{
+    width: 100vw;
+}
+*:focus {
+    outline: none;
+}
+
+#senhaBorder{
+    width: 20vw;
+    border: 2px solid #fff;
+    border-radius: 12px;
+}
+
+@media (max-width: 812px) {
+    #login {
+        background-color: #BFC4CA;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        color: #193D6F;
+        font-size: 20px;
+        width: 90vw;
+        height: 40vh;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        margin-top: 3vh;
+        text-align: center;
+        border-radius: 0 0 5px 5px;
+        border-radius: 10px;
+        box-shadow: 0 0 .8em #1d457e;
+    }
+}
+@media (min-width: 813px) {
+    #login {
+        background-color: #BFC4CA;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        color: #193D6F;
+        font-size: 20px;
+        position: absolute;
+        width: 30vw;
+        height: 57vh;
+        margin-left: 66vw;
+        margin-top: 3vh;
+        text-align: center;
+        border-radius: 0 0 5px 5px;
+        border-radius: 10px;
+        box-shadow: 0 0 .8em #1d457e;
+        align-items: flex-end;
+    }
 }
   
 /* remove a linha dos links */
-  
+
 a {
     text-decoration: none;
+    color: #193D6F;
 }
   
 /* /define o checkbox/ */
@@ -105,7 +142,7 @@ a {
 }
   
 .link a {
-    color: rgb(29, 162, 193);
+    /* color: rgb(29, 162, 193); */
     margin-left: 10px;
 }
   
@@ -130,47 +167,93 @@ a {
     height: 35px;
     top: 382px;
     background-color: #BFC4CA;
-    color: #193D6F;
+    color: #ffffff !important;
     font-weight: bold;
     border-radius: 0 0 5px 5px;
     border-radius: 5px;
     border-color: #193D6F;
     text-align: center;
+    
 }
-  
-  
-  
+
 .link2 {
     color: #193D6F;
     text-align: center;
 }
   
 #camp {
-    text-align: center;
+    margin-left: 5vw;
+    text-align: left;
     font-style: normal;
     font-weight: normal;
 }
-  
-/* /---------- informações ----------/ */
-  
-.info1 {
-    margin-left: 2%;
-    width: 900px;
-    text-align: justify;
+
+@media (max-width: 812px){
+    .borderInput{
+        margin-top: 1vh;
+        padding-left: 10px;
+        height: 4vh;
+        width: 75vw;
+        border: 2px solid #fff;
+        border-radius: 4vh;
+    }
 }
-  
+
+@media (min-width: 813px){
+    .borderInput{
+        margin-top: 1vh;
+        padding-left: 10px;
+        height: 4vh;
+        width: 20vw;
+        border: 2px solid #fff;
+        border-radius: 4vh;
+    }
+
+}
+
+/* /---------- informações ----------/ */
+
+@media (max-width: 812px)
+{
+      
+    .info1 {
+        margin-left: 5vw;
+        width: 90vw;
+        word-wrap: break-word;
+        text-align: justify;
+    }
+    .info {
+        margin-left: 5vw;
+        width: 90vw;
+        word-wrap: break-word;
+        text-align: justify;
+    }
+}
+
+@media (min-width: 813px)
+{
+      
+    .info1 {
+        margin-left: 2vw;
+        width: 61vw;
+        word-wrap: break-word;
+        text-align: justify;
+    }
+    .info {
+        margin-left: 2vw;
+        width: 61vw;
+        word-wrap: break-word;
+        text-align: justify;
+    }
+}
+
 h2 {
+
     color: #193D6F;
 }
   
 h3 {
     color: #5499C3;
-}
-  
-.info {
-    margin-left: 2%;
-    width: auto;
-    text-align: justify;
 }
   
 .footer {
