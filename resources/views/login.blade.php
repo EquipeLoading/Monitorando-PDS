@@ -21,7 +21,7 @@
     </div>
     
     <section>
-        <img src="{{ asset('/img/banner.jpg') }}" alt="banner_monitorando" class="banner" width=1503>
+        <img src="{{ asset('/img/banner.jpg') }}" alt="banner_monitorando" id="banner">
         <div id="login">
             <form method="POST" action="{{ route('login', ['locale' => app()->getLocale()]) }}">
                 @csrf

@@ -1,5 +1,6 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
   }
   
 /* /---------- NAV BAR ----------/ */
@@ -7,15 +8,18 @@ body {
 .topnav {
     overflow: hidden;
     background-color: #5499C3;
+    display: flex;
+    align-items: center;
+    width: 100vw;
 }
   
 .topnav a {
     float: left;
     color: #ffffff;
     text-align: center;
-    padding: 30px 30px;
+    padding: 4vh 2vw;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 1em;
 }
   
 .topnav a:hover {
@@ -34,15 +38,13 @@ body {
     background-color: #ffffff;
     border: none;
     color: #5499C3;
-    padding: 15px 32px;
     text-align: center;
-    font-size: 17px;
-    margin-top: 12px;
-    position: absolute;
-    width: 170px;
-    height: 46px;
-    left: 1150px;
-    top: 18px;
+    font-size: 1em;  
+    width: 11vw;
+    height: 7vh;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
     cursor: pointer;
 }
   
@@ -52,18 +54,18 @@ body {
     background-color: #193D6F;
     border: none;
     color: #ffffff;
-    padding: 15px 32px;
     text-align: center;
-    font-size: 17px;
-    margin-top: 12px;
-    position: absolute;
-    width: 208px;
-    height: 46px;
-    left: 1320px;
-    top: 18px;
+    font-size: 1em;
+    width: 11vw;
+    height: 7vh;
+    margin-right: 3vw;
     cursor: pointer;
 }
-  
+
+#banner{
+    width: 100vw;
+}
+
 /* /---------- caixa de login ----------/ */
   
 #login {
@@ -72,12 +74,12 @@ body {
     font-style: normal;
     font-weight: bold;
     color: #193D6F;
-    font-size: 20px;
+    font-size: 1.2em;
     position: absolute;
-    width: 400px;
+    width: 25vw;
     height: 350px;
-    left: 1000px;
-    top: 400px;
+    margin-left: 72vw;
+    margin-top: 3vh;
     text-align: center;
     border-radius: 0 0 5px 5px;
     border-radius: 10px;
@@ -153,11 +155,23 @@ a {
   
 /* /---------- informações ----------/ */
   
-.info1 {
-    margin-left: 2%;
-    width: 900px;
-    text-align: justify;
+
+@media (min-width: 813px){
+    .info1 {
+        margin-left: 2%;
+        width: 68vw;
+        word-wrap: break-word;
+        text-align: justify;
+    }
+    .info {
+        margin-left: 2%;
+        width: 68vw;
+        word-wrap: break-word;
+
+        text-align: justify;
+    }
 }
+
   
 h2 {
     color: #193D6F;
@@ -167,11 +181,7 @@ h3 {
     color: #5499C3;
 }
   
-.info {
-    margin-left: 2%;
-    width: auto;
-    text-align: justify;
-}
+
   
 .footer {
     text-align: center;
